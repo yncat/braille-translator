@@ -1,0 +1,4 @@
+*.o
+*debug*
+*.exe
+mecab_debug.txt
