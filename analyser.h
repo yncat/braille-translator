@@ -21,6 +21,6 @@ int load(BCSTR);
 int generateTokens();
 int analyseTokens();
 int extractTokens();
-
+int parseTokens();
 };
 #endif
