@@ -3,7 +3,8 @@
 #include <string>
 using namespace std;
 typedef string BCSTR;
-typedef unsigned char BCCHAR;
+typedef char BCCHAR;
+typedef unsigned char BCUCHAR;
 
 #define BCSTR_NPOS string::npos
 

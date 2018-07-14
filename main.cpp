@@ -16,10 +16,13 @@ analyser a;
 a.load("test.txt");
 a.generateTokens();
 a.analyseTokens();
-a.extractTokens();
 if(strcmp(argv[1],"braille")==0){
+a.extractTokens();
 printf("Reformatted for braille:\n");
 show_file("debug.txt");
+}
+if(strcmp(argv[1],"out")==0){
+a.outputTo("outbraille.bse");
 }
 if(strcmp(argv[1],"preprocess")==0){
 printf("Morphological analysis:\n");

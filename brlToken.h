@@ -12,6 +12,7 @@ BCSTR type;
 BCSTR subType;
 BCSTR conjugationType;
 BCSTR conjugationSubType;
+bool num, alpha;
 int afterSpaces;
 int afterLinefeeds;
 

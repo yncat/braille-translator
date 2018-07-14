@@ -3,6 +3,7 @@
 #include "base.h"
 #include <list>
 #include <vector>
+#include <unordered_map>
 #include "brlToken.h"
 
 #define FORMAT_BRL 0
@@ -18,27 +19,18 @@ private:
 int format;
 int charsPerLine;
 int linesPerPage;
+int numLines, numPages;
 outputSettings settings;
 list<BCSTR> parsed_lines;
 public:
 outputHandler();
 ~outputHandler();
-int output(vector<brlToken> tokens, char* fname);
+int output(vector<brlToken> tokens, BCSTR fname);
+void addLine(BCSTR);
 int setFormat(int);
 int getFormat();
 int setOutputSettings(outputSettings*);
 int getOutputSettings(outputSettings*);
-};
-
-class brailleFormat_base{
-public:
-virtual BCSTR getBrailleCode(BCSTR str)=0;
-virtual char* getHeaderPtr(int charsParLine, int linesPerPage, int numPages, int* out_headerSize) =0;
-};
-
-class brailleFormat_BSE: public brailleFormat_base{
-BCSTR getBrailleCode(BCSTR str);
-char* getHeaderPtr(int charsParLine, int linesPerPage, int numPages, int* out_headerSize);
 };
 
 class stringutil{
@@ -51,6 +43,21 @@ bool checkSmallCharAfter(BCSTR);
 public:
 void set(BCSTR);
 BCSTR getNext();
+};
+
+class brailleFormat_base{
+protected:
+unordered_map<BCSTR, BCSTR> translationTable;
+stringutil util;
+public:
+virtual void initialize()=0;
+virtual BCSTR getBrailleCode(BCSTR str);
+virtual char* getHeaderPtr(int charsParLine, int linesPerPage, int numPages, int* out_headerSize) =0;
+};
+
+class brailleFormat_BSE: public brailleFormat_base{
+void initialize();
+char* getHeaderPtr(int charsParLine, int linesPerPage, int numPages, int* out_headerSize);
 };
 
 #endif

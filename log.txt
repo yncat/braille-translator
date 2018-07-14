@@ -1,16 +1,142 @@
-1文字目: A
-2文字目: A
-zenkaku 3文字目: ア
-zenkaku 4文字目: イ
-zenkaku 5文字目: ウ
-zenkaku 6文字目: エ
-zenkaku 7文字目: オ
-zenkaku 8文字目: 、
-zenkaku getAt: ャ
-9文字目: ニャ
-zenkaku 10文字目: ー
-zenkaku 11文字目: ン
-zenkaku 12文字目: 、
-zenkaku getAt: ャ
-13文字目: キャ
-zenkaku 14文字目: ー
+searching
+foundワタシワ
+searching
+foundキャットデス。
+searching
+foundデモ、
+searching
+foundネズミワ
+searching
+foundキライデス。
+searching
+foundサカナモ
+searching
+foundキライデス。
+searching
+foundヨルワ
+searching
+foundネムリタイデス。
+searching
+foundブンショーガ
+searching
+foundミジカイ
+searching
+foundデス
+searching
+foundネ。
+searching
+foundワタシワ
+searching
+foundキャットトイウ、
+searching
+foundネコヲ
+searching
+foundエイゴ
+searching
+foundヒョーキニ
+searching
+foundシタ
+searching
+foundログインメイヲ
+searching
+foundケンキューシツニ　オイテ
+searching
+foundシヨー
+searching
+foundシテ
+searching
+foundイルガ、
+searching
+foundコレワ
+searching
+foundワタシガ
+searching
+foundネズミスキデアル
+searching
+foundカ、
+searching
+foundサカナスキデアル
+searching
+foundカ、
+searching
+foundアルイハヤコーセイデアル
+searching
+foundトイウ
+searching
+foundコトヲ
+searching
+foundカナラズシモ
+searching
+foundイミ
+searching
+foundシナイ。
+searching
+foundホンダンラクワ、
+searching
+foundブンショーヲ
+searching
+foundナガク
+searching
+foundシタ
+searching
+foundバアイノ
+searching
+foundテンヤク
+searching
+foundセイドヲ
+searching
+foundソクテイ
+searching
+foundスル
+searching
+foundタメニ、
+searching
+found2018ネン
+searching
+found6ガツ
+searching
+found6ニチ
+searching
+found21ジ
+searching
+found38フン
+searching
+found51ビョーゴロニ
+searching
+foundナカノ
+searching
+foundヒトニ　ヨッテ
+searching
+foundテキトーニ
+searching
+foundカキナオサレタ
+searching
+foundモノデアリ、
+searching
+foundケンキュー
+searching
+foundカツドートワ
+searching
+foundマッタク
+searching
+foundカンケイノ
+searching
+foundナイ
+searching
+found、
+searching
+foundイワユルダブント
+searching
+foundヨバレル
+searching
+foundルイノ
+searching
+foundツブヤキニ
+searching
+foundスギナイ。
+searching
+found
+searching
+found
+searching
+found

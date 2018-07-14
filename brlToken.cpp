@@ -4,6 +4,8 @@
 brlToken::brlToken(){
 afterSpaces=0;
 afterLinefeeds=0;
+num=false;
+alpha=false;
 }
 
 void brlToken::import(BCSTR in){

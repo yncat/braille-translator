@@ -1,7 +1,7 @@
-OBJS=analyser.o brlToken.o main.o libmecab.lib
+OBJS=analyser.o brlToken.o main.o parser.o libmecab.lib
 LIBS=
 main.exe: $(OBJS)
-	@g++ $(OBJS) $(LIBS) -o main.exe
+	@g++ $(OBJS) $(LIBS) -static -o main.exe
 
 .PHONY: clean
 clean:

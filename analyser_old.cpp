@@ -18,16 +18,22 @@ dic_after_rules[left]=right;
 int analyser::load(BCSTR filename){
 ifstream ifs(filename.c_str());
 if (ifs.fail()) return ERR_INFILE;
-BCSTR tmp;
-while(getline(ifs, tmp)){
-txt.push_back(tmp);
-}
+int len;
+ifs.seekg(0,ios::end);
+len = ifs.tellg ();
+ifs.seekg(0,ios::beg);
+BCCHAR* buf = new BCCHAR [len+1];
+memset(buf,0,len+1);
+ifs.read (buf, len);
+txt=buf;
+delete(buf);
 return ERR_NONE;
 }
 
 int analyser::generateTokens(){
-if(txt.empty()) return ERR_NOT_LOADED;
+if(txt=="") return ERR_NOT_LOADED;
   mecab_t *mecab;
+  const mecab_node_t *node;
   const BCCHAR *result;
   int i;
   size_t len;
@@ -38,16 +44,13 @@ BCSTR prm3="mecabrc";
 BCCHAR* argv[3]={const_cast<BCCHAR*>(prm1.c_str()),const_cast<BCCHAR*>(prm2.c_str()),const_cast<BCCHAR*>(prm3.c_str())};
 mecab=mecab_new(argc, argv);
 if(!mecab) return ERR_MECAB_INSTANTIATE;
-bool fail=false;
-ofstream o("mecab_debug.txt");
-for(auto itr=txt.begin();itr!=txt.end();++itr){
-result = mecab_sparse_tostr(mecab,(*itr).c_str());
-if(!result){
-fail=true;
-break;
-}
+result = mecab_sparse_tostr(mecab,txt.c_str());
+if(!result) return ERR_MECAB_PARSE;
 BCSTR result_str=result;
-o << endl << "-- new line --" << endl << result_str;
+  mecab_destroy(mecab);
+ofstream o("mecab_debug.txt");
+o << result_str;
+o.close();
 size_t index=0;
 size_t pos;
 bool brk=false;
@@ -69,13 +72,6 @@ tokens.push_back(token);
 if(brk) break;
 index=pos+(sizeof(BCCHAR)*1);
 }
-//最後のトークンは行の最後
-auto lt=tokens.end()-1;
-(*lt).afterLinefeeds=1;
-}
-  mecab_destroy(mecab);
-if(fail)  return ERR_MECAB_PARSE;
-o.close();
 return ERR_NONE;
 }
 
@@ -96,7 +92,8 @@ if(next && next->type!="記号" && next->type!="助詞" && next->read!="ヨウ") curre
 if(current->read=="ハ") current->read="ワ";
 if(current->read=="ヘ") current->read="エ";
 if(current->read=="トシテ") current->read="ト　シテ";
-if(current->read.size()>2){//先頭から1文字数えて、それが「ニ」、「ヲ」なら、その後にスペースを入れる。（に対して」や「を通して」など）
+if(current->read.size()>2){
+//先頭から1文字数えて、それが「ニ」、「ヲ」なら、その後にスペースを入れる。（に対して」や「を通して」など）
 BCSTR chars=current->read.substr(0,2);
 if(chars=="ニ") current->read.replace(0,2,"ニ　");
 else if(chars=="ヲ") current->read.replace(0,2,"ヲ　");
@@ -116,8 +113,8 @@ if(current->read=="ソ\ノ") current->afterSpaces=1;
 //トークン　「ソンナ」と完全一致するときはスペース１個。GCCは0x5c問題を処理してくれないので、ちょっとへんだけどオマジナイ。
 if(current->read=="ソ\ンナ") current->afterSpaces=1;
 
-if(current->type=="記号"){
 //記号「。」の後にはスペース２個、それ以外の後にはスペース１個。ただし、括弧のときは無視。
+if(current->type=="記号"){
 if(current->subType.find("括弧")==BCSTR_NPOS){
 if(current->read=="。") current->afterSpaces=2;
 else current->afterSpaces=1;
@@ -201,9 +198,9 @@ if(current->subType=="数") current->afterSpaces=0;
 for(boost::unordered::unordered_map<BCSTR,BCSTR>::iterator itr=dic_after_rules.begin();itr!=dic_after_rules.end();++itr){
 if(current->read==itr->first) current->read=itr->second;
 }
+
 //ルール記述ここまで
 }
-
 return ERR_NONE;
 }
 
