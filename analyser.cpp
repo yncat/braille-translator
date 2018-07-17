@@ -83,13 +83,13 @@ int analyser::analyseTokens(){
 if(tokens.size()==0) return ERR_NO_TOKENS;
 brlToken *previous, *current, *next;
 for(int i=0;i<tokens.size();i++){
-//MessageBox(NULL,current->read.c_str(),"test",MB_OK);
 if(i==0) previous=NULL;
 else previous=&tokens[i-1];
 if(i==tokens.size()-1) next=NULL;
 else next=&tokens[i+1];
 current=&tokens[i];
 
+cout << "token " << tokens.size() << ", previous: " << previous << ", current: " << current << ", next: " << next << endl;
 //助詞の後にはスペースを１個入れて、なおかつ、「ハ」「ヘ」は、「ワ」「エ」に置換。ただし、次に「記号」が現れるか、助詞が連続しているか、次のトークンが「よう」に一致する場合にはスペースを入れない。また例外として、「として」は「と　して」に置換。
 if(current->type=="助詞"){
 if(next && next->type!="記号" && next->type!="助詞" && next->read!="ヨウ") current->afterSpaces=1;
@@ -124,10 +124,14 @@ else current->afterSpaces=1;
 }
 }
 
+cout << "this token is OK" << endl;
+
 if(current->type=="名詞"){
 //現在のトークンが名詞で、次が名詞か動詞ならスペース。ただし、名詞であっても、接尾属性が着いていたらキャンセル。
-if(next && next->type=="名詞" || next->type=="動詞"){
+if(next){
+if(next->type=="名詞" || next->type=="動詞"){
 if(next->subType!="接尾") current->afterSpaces=1;
+}
 }
 //名詞で、「ノ」と完全一致したら、以前のトークンのスペースを打ち消す（～～されたのが　など）
 if(previous && current->read=="ノ") previous->afterSpaces=0;
@@ -168,6 +172,7 @@ if(current->conjugationType.find("サ変")!=BCSTR_NPOS && current->conjugationSubT
 //次のトークンが「ヨウ」であれば、スペースを打ち消す。置換前なので、検索ワードは「ヨウ」でいい。
 if(next && next->read=="ヨウ") current->afterSpaces=0;
 
+
 //先頭に現れない「ウ」は「ー」に置換
 //ただし、文字列が「ウ」に完全一致する時だけはこの処理を飛ばす。
 if(current->read!="ウ"){
@@ -194,11 +199,13 @@ size_t pos=current->read.find("ツキ");
 if(pos!=BCSTR_NPOS) current->read.replace(pos,4,"ガツ");
 }
 
+
 //現在のトークンが数字のときは、いかなる場合にもスペースを空けない
 if(current->subType=="数"){
 current->num=true;
  current->afterSpaces=0;
 }
+
 
 //ルールを適用したので、dic/after_rules.dicの中身の置き換え規則を適用
 for(boost::unordered::unordered_map<BCSTR,BCSTR>::iterator itr=dic_after_rules.begin();itr!=dic_after_rules.end();++itr){
@@ -207,6 +214,7 @@ if(current->read==itr->first) current->read=itr->second;
 //ルール記述ここまで
 }
 
+cout << "returning" << endl;
 return ERR_NONE;
 }
 

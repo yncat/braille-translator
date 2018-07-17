@@ -1,142 +1,336 @@
-searching
-foundワタシワ
-searching
-foundキャットデス。
-searching
-foundデモ、
-searching
-foundネズミワ
-searching
-foundキライデス。
-searching
-foundサカナモ
-searching
-foundキライデス。
-searching
-foundヨルワ
-searching
-foundネムリタイデス。
-searching
-foundブンショーガ
-searching
-foundミジカイ
-searching
-foundデス
-searching
-foundネ。
-searching
-foundワタシワ
-searching
-foundキャットトイウ、
-searching
-foundネコヲ
-searching
-foundエイゴ
-searching
-foundヒョーキニ
-searching
-foundシタ
-searching
-foundログインメイヲ
-searching
-foundケンキューシツニ　オイテ
-searching
-foundシヨー
-searching
-foundシテ
-searching
-foundイルガ、
-searching
-foundコレワ
-searching
-foundワタシガ
-searching
-foundネズミスキデアル
-searching
-foundカ、
-searching
-foundサカナスキデアル
-searching
-foundカ、
-searching
-foundアルイハヤコーセイデアル
-searching
-foundトイウ
-searching
-foundコトヲ
-searching
-foundカナラズシモ
-searching
-foundイミ
-searching
-foundシナイ。
-searching
-foundホンダンラクワ、
-searching
-foundブンショーヲ
-searching
-foundナガク
-searching
-foundシタ
-searching
-foundバアイノ
-searching
-foundテンヤク
-searching
-foundセイドヲ
-searching
-foundソクテイ
-searching
-foundスル
-searching
-foundタメニ、
-searching
-found2018ネン
-searching
-found6ガツ
-searching
-found6ニチ
-searching
-found21ジ
-searching
-found38フン
-searching
-found51ビョーゴロニ
-searching
-foundナカノ
-searching
-foundヒトニ　ヨッテ
-searching
-foundテキトーニ
-searching
-foundカキナオサレタ
-searching
-foundモノデアリ、
-searching
-foundケンキュー
-searching
-foundカツドートワ
-searching
-foundマッタク
-searching
-foundカンケイノ
-searching
-foundナイ
-searching
-found、
-searching
-foundイワユルダブント
-searching
-foundヨバレル
-searching
-foundルイノ
-searching
-foundツブヤキニ
-searching
-foundスギナイ。
-searching
-found
-searching
-found
-searching
-found
+starting
+initializing analyser
+loading test.txt
+generating tokens
+analysing tokens
+token 164, previous: 0, current: 0x2033a40, next: 0x2033adc
+this token is OK
+token 164, previous: 0x2033a40, current: 0x2033adc, next: 0x2033b78
+this token is OK
+token 164, previous: 0x2033adc, current: 0x2033b78, next: 0x2033c14
+this token is OK
+token 164, previous: 0x2033b78, current: 0x2033c14, next: 0x2033cb0
+this token is OK
+token 164, previous: 0x2033c14, current: 0x2033cb0, next: 0x2033d4c
+this token is OK
+token 164, previous: 0x2033cb0, current: 0x2033d4c, next: 0x2033de8
+this token is OK
+token 164, previous: 0x2033d4c, current: 0x2033de8, next: 0x2033e84
+this token is OK
+token 164, previous: 0x2033de8, current: 0x2033e84, next: 0x2033f20
+this token is OK
+token 164, previous: 0x2033e84, current: 0x2033f20, next: 0x2033fbc
+this token is OK
+token 164, previous: 0x2033f20, current: 0x2033fbc, next: 0x2034058
+this token is OK
+token 164, previous: 0x2033fbc, current: 0x2034058, next: 0x20340f4
+this token is OK
+token 164, previous: 0x2034058, current: 0x20340f4, next: 0x2034190
+this token is OK
+token 164, previous: 0x20340f4, current: 0x2034190, next: 0x203422c
+this token is OK
+token 164, previous: 0x2034190, current: 0x203422c, next: 0x20342c8
+this token is OK
+token 164, previous: 0x203422c, current: 0x20342c8, next: 0x2034364
+this token is OK
+token 164, previous: 0x20342c8, current: 0x2034364, next: 0x2034400
+this token is OK
+token 164, previous: 0x2034364, current: 0x2034400, next: 0x203449c
+this token is OK
+token 164, previous: 0x2034400, current: 0x203449c, next: 0x2034538
+this token is OK
+token 164, previous: 0x203449c, current: 0x2034538, next: 0x20345d4
+this token is OK
+token 164, previous: 0x2034538, current: 0x20345d4, next: 0x2034670
+this token is OK
+token 164, previous: 0x20345d4, current: 0x2034670, next: 0x203470c
+this token is OK
+token 164, previous: 0x2034670, current: 0x203470c, next: 0x20347a8
+this token is OK
+token 164, previous: 0x203470c, current: 0x20347a8, next: 0x2034844
+this token is OK
+token 164, previous: 0x20347a8, current: 0x2034844, next: 0x20348e0
+this token is OK
+token 164, previous: 0x2034844, current: 0x20348e0, next: 0x203497c
+this token is OK
+token 164, previous: 0x20348e0, current: 0x203497c, next: 0x2034a18
+this token is OK
+token 164, previous: 0x203497c, current: 0x2034a18, next: 0x2034ab4
+this token is OK
+token 164, previous: 0x2034a18, current: 0x2034ab4, next: 0x2034b50
+this token is OK
+token 164, previous: 0x2034ab4, current: 0x2034b50, next: 0x2034bec
+this token is OK
+token 164, previous: 0x2034b50, current: 0x2034bec, next: 0x2034c88
+this token is OK
+token 164, previous: 0x2034bec, current: 0x2034c88, next: 0x2034d24
+this token is OK
+token 164, previous: 0x2034c88, current: 0x2034d24, next: 0x2034dc0
+this token is OK
+token 164, previous: 0x2034d24, current: 0x2034dc0, next: 0x2034e5c
+this token is OK
+token 164, previous: 0x2034dc0, current: 0x2034e5c, next: 0x2034ef8
+this token is OK
+token 164, previous: 0x2034e5c, current: 0x2034ef8, next: 0x2034f94
+this token is OK
+token 164, previous: 0x2034ef8, current: 0x2034f94, next: 0x2035030
+this token is OK
+token 164, previous: 0x2034f94, current: 0x2035030, next: 0x20350cc
+this token is OK
+token 164, previous: 0x2035030, current: 0x20350cc, next: 0x2035168
+this token is OK
+token 164, previous: 0x20350cc, current: 0x2035168, next: 0x2035204
+this token is OK
+token 164, previous: 0x2035168, current: 0x2035204, next: 0x20352a0
+this token is OK
+token 164, previous: 0x2035204, current: 0x20352a0, next: 0x203533c
+this token is OK
+token 164, previous: 0x20352a0, current: 0x203533c, next: 0x20353d8
+this token is OK
+token 164, previous: 0x203533c, current: 0x20353d8, next: 0x2035474
+this token is OK
+token 164, previous: 0x20353d8, current: 0x2035474, next: 0x2035510
+this token is OK
+token 164, previous: 0x2035474, current: 0x2035510, next: 0x20355ac
+this token is OK
+token 164, previous: 0x2035510, current: 0x20355ac, next: 0x2035648
+this token is OK
+token 164, previous: 0x20355ac, current: 0x2035648, next: 0x20356e4
+this token is OK
+token 164, previous: 0x2035648, current: 0x20356e4, next: 0x2035780
+this token is OK
+token 164, previous: 0x20356e4, current: 0x2035780, next: 0x203581c
+this token is OK
+token 164, previous: 0x2035780, current: 0x203581c, next: 0x20358b8
+this token is OK
+token 164, previous: 0x203581c, current: 0x20358b8, next: 0x2035954
+this token is OK
+token 164, previous: 0x20358b8, current: 0x2035954, next: 0x20359f0
+this token is OK
+token 164, previous: 0x2035954, current: 0x20359f0, next: 0x2035a8c
+this token is OK
+token 164, previous: 0x20359f0, current: 0x2035a8c, next: 0x2035b28
+this token is OK
+token 164, previous: 0x2035a8c, current: 0x2035b28, next: 0x2035bc4
+this token is OK
+token 164, previous: 0x2035b28, current: 0x2035bc4, next: 0x2035c60
+this token is OK
+token 164, previous: 0x2035bc4, current: 0x2035c60, next: 0x2035cfc
+this token is OK
+token 164, previous: 0x2035c60, current: 0x2035cfc, next: 0x2035d98
+this token is OK
+token 164, previous: 0x2035cfc, current: 0x2035d98, next: 0x2035e34
+this token is OK
+token 164, previous: 0x2035d98, current: 0x2035e34, next: 0x2035ed0
+this token is OK
+token 164, previous: 0x2035e34, current: 0x2035ed0, next: 0x2035f6c
+this token is OK
+token 164, previous: 0x2035ed0, current: 0x2035f6c, next: 0x2036008
+this token is OK
+token 164, previous: 0x2035f6c, current: 0x2036008, next: 0x20360a4
+this token is OK
+token 164, previous: 0x2036008, current: 0x20360a4, next: 0x2036140
+this token is OK
+token 164, previous: 0x20360a4, current: 0x2036140, next: 0x20361dc
+this token is OK
+token 164, previous: 0x2036140, current: 0x20361dc, next: 0x2036278
+this token is OK
+token 164, previous: 0x20361dc, current: 0x2036278, next: 0x2036314
+this token is OK
+token 164, previous: 0x2036278, current: 0x2036314, next: 0x20363b0
+this token is OK
+token 164, previous: 0x2036314, current: 0x20363b0, next: 0x203644c
+this token is OK
+token 164, previous: 0x20363b0, current: 0x203644c, next: 0x20364e8
+this token is OK
+token 164, previous: 0x203644c, current: 0x20364e8, next: 0x2036584
+this token is OK
+token 164, previous: 0x20364e8, current: 0x2036584, next: 0x2036620
+this token is OK
+token 164, previous: 0x2036584, current: 0x2036620, next: 0x20366bc
+this token is OK
+token 164, previous: 0x2036620, current: 0x20366bc, next: 0x2036758
+this token is OK
+token 164, previous: 0x20366bc, current: 0x2036758, next: 0x20367f4
+this token is OK
+token 164, previous: 0x2036758, current: 0x20367f4, next: 0x2036890
+this token is OK
+token 164, previous: 0x20367f4, current: 0x2036890, next: 0x203692c
+this token is OK
+token 164, previous: 0x2036890, current: 0x203692c, next: 0x20369c8
+this token is OK
+token 164, previous: 0x203692c, current: 0x20369c8, next: 0x2036a64
+this token is OK
+token 164, previous: 0x20369c8, current: 0x2036a64, next: 0x2036b00
+this token is OK
+token 164, previous: 0x2036a64, current: 0x2036b00, next: 0x2036b9c
+this token is OK
+token 164, previous: 0x2036b00, current: 0x2036b9c, next: 0x2036c38
+this token is OK
+token 164, previous: 0x2036b9c, current: 0x2036c38, next: 0x2036cd4
+this token is OK
+token 164, previous: 0x2036c38, current: 0x2036cd4, next: 0x2036d70
+this token is OK
+token 164, previous: 0x2036cd4, current: 0x2036d70, next: 0x2036e0c
+this token is OK
+token 164, previous: 0x2036d70, current: 0x2036e0c, next: 0x2036ea8
+this token is OK
+token 164, previous: 0x2036e0c, current: 0x2036ea8, next: 0x2036f44
+this token is OK
+token 164, previous: 0x2036ea8, current: 0x2036f44, next: 0x2036fe0
+this token is OK
+token 164, previous: 0x2036f44, current: 0x2036fe0, next: 0x203707c
+this token is OK
+token 164, previous: 0x2036fe0, current: 0x203707c, next: 0x2037118
+this token is OK
+token 164, previous: 0x203707c, current: 0x2037118, next: 0x20371b4
+this token is OK
+token 164, previous: 0x2037118, current: 0x20371b4, next: 0x2037250
+this token is OK
+token 164, previous: 0x20371b4, current: 0x2037250, next: 0x20372ec
+this token is OK
+token 164, previous: 0x2037250, current: 0x20372ec, next: 0x2037388
+this token is OK
+token 164, previous: 0x20372ec, current: 0x2037388, next: 0x2037424
+this token is OK
+token 164, previous: 0x2037388, current: 0x2037424, next: 0x20374c0
+this token is OK
+token 164, previous: 0x2037424, current: 0x20374c0, next: 0x203755c
+this token is OK
+token 164, previous: 0x20374c0, current: 0x203755c, next: 0x20375f8
+this token is OK
+token 164, previous: 0x203755c, current: 0x20375f8, next: 0x2037694
+this token is OK
+token 164, previous: 0x20375f8, current: 0x2037694, next: 0x2037730
+this token is OK
+token 164, previous: 0x2037694, current: 0x2037730, next: 0x20377cc
+this token is OK
+token 164, previous: 0x2037730, current: 0x20377cc, next: 0x2037868
+this token is OK
+token 164, previous: 0x20377cc, current: 0x2037868, next: 0x2037904
+this token is OK
+token 164, previous: 0x2037868, current: 0x2037904, next: 0x20379a0
+this token is OK
+token 164, previous: 0x2037904, current: 0x20379a0, next: 0x2037a3c
+this token is OK
+token 164, previous: 0x20379a0, current: 0x2037a3c, next: 0x2037ad8
+this token is OK
+token 164, previous: 0x2037a3c, current: 0x2037ad8, next: 0x2037b74
+this token is OK
+token 164, previous: 0x2037ad8, current: 0x2037b74, next: 0x2037c10
+this token is OK
+token 164, previous: 0x2037b74, current: 0x2037c10, next: 0x2037cac
+this token is OK
+token 164, previous: 0x2037c10, current: 0x2037cac, next: 0x2037d48
+this token is OK
+token 164, previous: 0x2037cac, current: 0x2037d48, next: 0x2037de4
+this token is OK
+token 164, previous: 0x2037d48, current: 0x2037de4, next: 0x2037e80
+this token is OK
+token 164, previous: 0x2037de4, current: 0x2037e80, next: 0x2037f1c
+this token is OK
+token 164, previous: 0x2037e80, current: 0x2037f1c, next: 0x2037fb8
+this token is OK
+token 164, previous: 0x2037f1c, current: 0x2037fb8, next: 0x2038054
+this token is OK
+token 164, previous: 0x2037fb8, current: 0x2038054, next: 0x20380f0
+this token is OK
+token 164, previous: 0x2038054, current: 0x20380f0, next: 0x203818c
+this token is OK
+token 164, previous: 0x20380f0, current: 0x203818c, next: 0x2038228
+this token is OK
+token 164, previous: 0x203818c, current: 0x2038228, next: 0x20382c4
+this token is OK
+token 164, previous: 0x2038228, current: 0x20382c4, next: 0x2038360
+this token is OK
+token 164, previous: 0x20382c4, current: 0x2038360, next: 0x20383fc
+this token is OK
+token 164, previous: 0x2038360, current: 0x20383fc, next: 0x2038498
+this token is OK
+token 164, previous: 0x20383fc, current: 0x2038498, next: 0x2038534
+this token is OK
+token 164, previous: 0x2038498, current: 0x2038534, next: 0x20385d0
+this token is OK
+token 164, previous: 0x2038534, current: 0x20385d0, next: 0x203866c
+this token is OK
+token 164, previous: 0x20385d0, current: 0x203866c, next: 0x2038708
+this token is OK
+token 164, previous: 0x203866c, current: 0x2038708, next: 0x20387a4
+this token is OK
+token 164, previous: 0x2038708, current: 0x20387a4, next: 0x2038840
+this token is OK
+token 164, previous: 0x20387a4, current: 0x2038840, next: 0x20388dc
+this token is OK
+token 164, previous: 0x2038840, current: 0x20388dc, next: 0x2038978
+this token is OK
+token 164, previous: 0x20388dc, current: 0x2038978, next: 0x2038a14
+this token is OK
+token 164, previous: 0x2038978, current: 0x2038a14, next: 0x2038ab0
+this token is OK
+token 164, previous: 0x2038a14, current: 0x2038ab0, next: 0x2038b4c
+this token is OK
+token 164, previous: 0x2038ab0, current: 0x2038b4c, next: 0x2038be8
+this token is OK
+token 164, previous: 0x2038b4c, current: 0x2038be8, next: 0x2038c84
+this token is OK
+token 164, previous: 0x2038be8, current: 0x2038c84, next: 0x2038d20
+this token is OK
+token 164, previous: 0x2038c84, current: 0x2038d20, next: 0x2038dbc
+this token is OK
+token 164, previous: 0x2038d20, current: 0x2038dbc, next: 0x2038e58
+this token is OK
+token 164, previous: 0x2038dbc, current: 0x2038e58, next: 0x2038ef4
+this token is OK
+token 164, previous: 0x2038e58, current: 0x2038ef4, next: 0x2038f90
+this token is OK
+token 164, previous: 0x2038ef4, current: 0x2038f90, next: 0x203902c
+this token is OK
+token 164, previous: 0x2038f90, current: 0x203902c, next: 0x20390c8
+this token is OK
+token 164, previous: 0x203902c, current: 0x20390c8, next: 0x2039164
+this token is OK
+token 164, previous: 0x20390c8, current: 0x2039164, next: 0x2039200
+this token is OK
+token 164, previous: 0x2039164, current: 0x2039200, next: 0x203929c
+this token is OK
+token 164, previous: 0x2039200, current: 0x203929c, next: 0x2039338
+this token is OK
+token 164, previous: 0x203929c, current: 0x2039338, next: 0x20393d4
+this token is OK
+token 164, previous: 0x2039338, current: 0x20393d4, next: 0x2039470
+this token is OK
+token 164, previous: 0x20393d4, current: 0x2039470, next: 0x203950c
+this token is OK
+token 164, previous: 0x2039470, current: 0x203950c, next: 0x20395a8
+this token is OK
+token 164, previous: 0x203950c, current: 0x20395a8, next: 0x2039644
+this token is OK
+token 164, previous: 0x20395a8, current: 0x2039644, next: 0x20396e0
+this token is OK
+token 164, previous: 0x2039644, current: 0x20396e0, next: 0x203977c
+this token is OK
+token 164, previous: 0x20396e0, current: 0x203977c, next: 0x2039818
+this token is OK
+token 164, previous: 0x203977c, current: 0x2039818, next: 0x20398b4
+this token is OK
+token 164, previous: 0x2039818, current: 0x20398b4, next: 0x2039950
+this token is OK
+token 164, previous: 0x20398b4, current: 0x2039950, next: 0x20399ec
+this token is OK
+token 164, previous: 0x2039950, current: 0x20399ec, next: 0x2039a88
+this token is OK
+token 164, previous: 0x20399ec, current: 0x2039a88, next: 0x2039b24
+this token is OK
+token 164, previous: 0x2039a88, current: 0x2039b24, next: 0x2039bc0
+this token is OK
+token 164, previous: 0x2039b24, current: 0x2039bc0, next: 0x2039c5c
+this token is OK
+token 164, previous: 0x2039bc0, current: 0x2039c5c, next: 0x2039cf8
+this token is OK
+token 164, previous: 0x2039c5c, current: 0x2039cf8, next: 0x2039d94
+this token is OK
+token 164, previous: 0x2039cf8, current: 0x2039d94, next: 0
+this token is OK
+returning
+checking commandline parameters
+outputting to outbraille.bse
