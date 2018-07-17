@@ -8,6 +8,7 @@ num=false;
 alpha=false;
 require36=false;
 require3456=false;
+require56=false;
 }
 
 void brlToken::import(BCSTR in){
@@ -52,7 +53,7 @@ else read="*";
 if(read=="*") read=str;
 if(read=="!") type="‹L†";
 if(read==".") type="‹L†";
-checkEnglish();
+if(type!="‹L†") checkEnglish();
 }
 
 void brlToken::checkEnglish(){

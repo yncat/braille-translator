@@ -1,7 +1,0 @@
-starting
-initializing analyser
-loading test.txt
-generating tokens
-analysing tokens
-checking commandline parameters
-outputting to outbraille.bse

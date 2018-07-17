@@ -200,17 +200,28 @@ current->num=true;
 if(previous && context!=CONTEXT_NUMBER){
 context=CONTEXT_NUMBER;
 current->require3456=true;
+cout << "context changed to number" << endl;
 }
 //次が数字じゃなかったら、最初の文字を見る
 if(next && next->subType!="数") current->require36=checkNumber36(next->read.substr(0,2));
 }else{//数字じゃないが、記号だったら数字コンテキストを引き継ぐ
-if(context==CONTEXT_NUMBER && current->type!="記号") context=CONTEXT_NORMAL;
+cout << "context check " << context << endl;
+if(context==CONTEXT_NUMBER){
+cout << "in number context: previous is " << previous->read << ", current is " << current->read << "(" << current->type << ")" << endl;
+if(current->type!="記号") context=CONTEXT_NORMAL;
+}
 }
 
 //今のトークンが英語で、次が英語でない場合はスペース。正し、記号はつなげる
 if(next && current->alpha){
+if(context!=CONTEXT_ALPHABET){
+current->require56=true;
+context=CONTEXT_ALPHABET;
+}
 if(!next->alpha && next->type!="記号") current->afterSpaces=1;
 if(next->type=="記号") current->afterSpaces=0;
+}else{
+if(context==CONTEXT_ALPHABET) context=CONTEXT_NORMAL;
 }
 
 //数字コンテキストでは、.は2の点にする

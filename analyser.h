@@ -13,7 +13,6 @@
 #define CONTEXT_NORMAL 0
 #define CONTEXT_ALPHABET 1
 #define CONTEXT_NUMBER 2
-
 class analyser{
 private:
 int context;

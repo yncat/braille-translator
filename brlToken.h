@@ -16,6 +16,7 @@ bool num, alpha;
 int alphaType;
 bool require36;
 bool require3456;
+bool require56;
 int afterSpaces;
 int afterLinefeeds;
 

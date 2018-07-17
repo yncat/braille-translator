@@ -40,10 +40,8 @@ break;
 
 if((*itr).require3456) tmp+=formatter->getBrailleCode("#");
 
+if((*itr).require56) tmp+=formatter->getBrailleCode("A");
 if((*itr).alpha){
-if(mode!=PARSE_MODE_ALPHABET){
-mode=PARSE_MODE_ALPHABET;
- tmp+=formatter->getBrailleCode("A");
 switch((*itr).alphaType){
 case 1:
 tmp+=formatter->getBrailleCode(",");
@@ -53,9 +51,6 @@ tmp+=formatter->getBrailleCode(",,");
 break;
 }//switch
 }//if
-}else if(mode==PARSE_MODE_ALPHABET){
-mode=PARSE_MODE_NORMAL;
-}
 
 tmp+=formatter->getBrailleCode((*itr).read);
 if((*itr).require36) tmp+=formatter->getBrailleCode("-");
@@ -332,6 +327,7 @@ translationTable["#"]="#";//”š•„
 translationTable["/36"]="-";//Œq‚¬•„
 translationTable["/6"]=",";//‘å•¶š•„
 translationTable[" "]=" ";
+translationTable[","]=",";
 }
 
 char* brailleFormat_BSE::getHeaderPtr(int charsPerLine, int linesPerPage, int numPages, int* out_headerSize){
