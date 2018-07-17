@@ -13,11 +13,13 @@ BCSTR subType;
 BCSTR conjugationType;
 BCSTR conjugationSubType;
 bool num, alpha;
+int alphaType;
 int afterSpaces;
 int afterLinefeeds;
 
 
 brlToken();
 void import(BCSTR);
+void checkEnglish();
 };
 #endif

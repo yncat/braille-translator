@@ -31,12 +31,32 @@ while(true){
 tmp.clear();
 spc=0;
 lf=0;
+int mode=PARSE_MODE_NORMAL;
 while(true){
 if(itr==tokens.end()){
 ended=true;
 break;
 }//if
+
 if((*itr).num) tmp+=formatter->getBrailleCode("#");
+
+if((*itr).alpha){
+if(mode!=PARSE_MODE_ALPHABET){
+mode=PARSE_MODE_ALPHABET;
+ tmp+=formatter->getBrailleCode("、");
+switch((*itr).alphaType){
+case 1:
+tmp+=formatter->getBrailleCode(",");
+break;
+case 2:
+tmp+=formatter->getBrailleCode(",,");
+break;
+}//switch
+}//if
+}else if(mode==PARSE_MODE_ALPHABET){
+mode=PARSE_MODE_NORMAL;
+}
+
 tmp+=formatter->getBrailleCode((*itr).read);
 if((*itr).afterSpaces>0){
 spc=(*itr).afterSpaces;
@@ -229,6 +249,8 @@ translationTable["ッ"]="1";
 translationTable["ー"]="3";
 translationTable["、"]=";";
 translationTable["。"]="4";
+translationTable["!"]="6";
+translationTable["！"]="6";
 translationTable["？"]="5";
 translationTable["?"]="5";
 //数字
@@ -300,6 +322,7 @@ translationTable["z"]="Z";
 translationTable["#"]="#";//数字符
 translationTable["/36"]="-";//繋ぎ符
 translationTable["/6"]=",";//大文字符
+translationTable[" "]=" ";
 }
 
 char* brailleFormat_BSE::getHeaderPtr(int charsPerLine, int linesPerPage, int numPages, int* out_headerSize){

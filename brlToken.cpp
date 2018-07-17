@@ -46,4 +46,33 @@ conjugationSubType=elems[5];
 
 if(elems.size()>=8) read=elems[7];
 else read="*";
+//読みが「*」と解釈されているものはそのまま出力
+if(read=="*") read=str;
+if(read=="!") type="記号";
+checkEnglish();
 }
+
+void brlToken::checkEnglish(){
+alphaType=0;
+BCUCHAR c;
+alpha=true;
+for(int i=0;i<read.size();i++){
+c=read[i];
+if(c>='A' && c<='Z') continue;
+if(c>='a' && c<='z') continue;
+if(c=='.' || c==',' || c=='-' || c== '\'' || c==';' || c==':') continue;
+alpha=false;
+break;
+}
+if(alpha){
+if(read[0]>='A' && read[0]<='Z'){
+alphaType=1;
+if(read.size()>1){
+if(read[1]>='A' && read[1]<='Z') alphaType=2;
+}//if
+}//if
+}//if
+}//func
+
+
+

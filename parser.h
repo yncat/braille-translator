@@ -9,6 +9,9 @@
 #define FORMAT_BRL 0
 #define FORMAT_BSE 1
 
+#define PARSE_MODE_NORMAL 0
+#define PARSE_MODE_ALPHABET 1
+
 typedef struct{
 int charsPerLine;
 int linesPerPage;

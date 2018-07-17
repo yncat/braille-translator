@@ -88,8 +88,6 @@ else previous=&tokens[i-1];
 if(i==tokens.size()-1) next=NULL;
 else next=&tokens[i+1];
 current=&tokens[i];
-
-cout << "token " << tokens.size() << ", previous: " << previous << ", current: " << current << ", next: " << next << endl;
 //助詞の後にはスペースを１個入れて、なおかつ、「ハ」「ヘ」は、「ワ」「エ」に置換。ただし、次に「記号」が現れるか、助詞が連続しているか、次のトークンが「よう」に一致する場合にはスペースを入れない。また例外として、「として」は「と　して」に置換。
 if(current->type=="助詞"){
 if(next && next->type!="記号" && next->type!="助詞" && next->read!="ヨウ") current->afterSpaces=1;
@@ -123,8 +121,6 @@ if(current->read=="。") current->afterSpaces=2;
 else current->afterSpaces=1;
 }
 }
-
-cout << "this token is OK" << endl;
 
 if(current->type=="名詞"){
 //現在のトークンが名詞で、次が名詞か動詞ならスペース。ただし、名詞であっても、接尾属性が着いていたらキャンセル。
@@ -188,11 +184,6 @@ else current->read.replace(pos,2,"ー");
 current->read="ー";
 }
 
-//読みが「*」と解釈されているものはそのまま出力
-if(current->read=="*"){
- current->read=current->str;
-}
-
 //前のトークンが数のとき、「ツキ」は「ガツ」に置換
 if(previous && previous->subType=="数"){
 size_t pos=current->read.find("ツキ");
@@ -206,7 +197,13 @@ current->num=true;
  current->afterSpaces=0;
 }
 
+//今のトークンが英語で、次が英語でない場合はスペース。正し、記号はつなげる
+if(next && current->alpha){
+if(!next->alpha && next->type!="記号") current->afterSpaces=1;
+if(next->type=="記号") current->afterSpaces=0;
+}
 
+cout << current->read << ":" << current->afterSpaces << endl;
 //ルールを適用したので、dic/after_rules.dicの中身の置き換え規則を適用
 for(boost::unordered::unordered_map<BCSTR,BCSTR>::iterator itr=dic_after_rules.begin();itr!=dic_after_rules.end();++itr){
 if(current->read==itr->first) current->read=itr->second;
