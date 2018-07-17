@@ -3,6 +3,7 @@
 #include <iostream>
 
 analyser::analyser(){
+context=CONTEXT_NORMAL;
 ifstream ifs("dic\\after_rules.dic");
 if(ifs.fail()) return;
 BCSTR str;
@@ -195,6 +196,15 @@ if(pos!=BCSTR_NPOS) current->read.replace(pos,4,"ガツ");
 if(current->subType=="数"){
 current->num=true;
  current->afterSpaces=0;
+//コンテキストが数字じゃなかったら数字府
+if(previous && context!=CONTEXT_NUMBER){
+context=CONTEXT_NUMBER;
+current->require3456=true;
+}
+//次が数字じゃなかったら、最初の文字を見る
+if(next && next->subType!="数") current->require36=checkNumber36(next->read.substr(0,2));
+}else{//数字じゃないが、記号だったら数字コンテキストを引き継ぐ
+if(context==CONTEXT_NUMBER && current->type!="記号") context=CONTEXT_NORMAL;
 }
 
 //今のトークンが英語で、次が英語でない場合はスペース。正し、記号はつなげる
@@ -203,7 +213,12 @@ if(!next->alpha && next->type!="記号") current->afterSpaces=1;
 if(next->type=="記号") current->afterSpaces=0;
 }
 
-cout << current->read << ":" << current->afterSpaces << endl;
+//数字コンテキストでは、.は2の点にする
+if(context==CONTEXT_NUMBER){
+if(current->read==".") current->read="ッ";
+current->afterSpaces=0;
+}
+
 //ルールを適用したので、dic/after_rules.dicの中身の置き換え規則を適用
 for(boost::unordered::unordered_map<BCSTR,BCSTR>::iterator itr=dic_after_rules.begin();itr!=dic_after_rules.end();++itr){
 if(current->read==itr->first) current->read=itr->second;
@@ -211,7 +226,6 @@ if(current->read==itr->first) current->read=itr->second;
 //ルール記述ここまで
 }
 
-cout << "returning" << endl;
 return ERR_NONE;
 }
 
@@ -237,5 +251,19 @@ int analyser::outputTo(BCSTR fname){
 outputHandler h;
 h.output(tokens,fname);
 return 1;
+}
+
+bool analyser::checkNumber36(BCSTR c){
+if(c=="ア") return true;
+if(c=="イ") return true;
+if(c=="ウ") return true;
+if(c=="ル") return true;
+if(c=="ラ") return true;
+if(c=="エ") return true;
+if(c=="レ") return true;
+if(c=="リ") return true;
+if(c=="オ") return true;
+if(c=="ロ") return true;
+return false;
 }
 

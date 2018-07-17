@@ -38,7 +38,7 @@ ended=true;
 break;
 }//if
 
-if((*itr).num) tmp+=formatter->getBrailleCode("#");
+if((*itr).require3456) tmp+=formatter->getBrailleCode("#");
 
 if((*itr).alpha){
 if(mode!=PARSE_MODE_ALPHABET){
@@ -58,6 +58,7 @@ mode=PARSE_MODE_NORMAL;
 }
 
 tmp+=formatter->getBrailleCode((*itr).read);
+if((*itr).require36) tmp+=formatter->getBrailleCode("-");
 if((*itr).afterSpaces>0){
 spc=(*itr).afterSpaces;
 lf=(*itr).afterLinefeeds;
@@ -127,6 +128,11 @@ translationTable["イ"]="B";
 translationTable["ウ"]="C";
 translationTable["エ"]="F";
 translationTable["オ"]="I";
+translationTable["ァ"]="A";
+translationTable["ィ"]="B";
+translationTable["ゥ"]="C";
+translationTable["ェ"]="F";
+translationTable["ォ"]="I";
 translationTable["カ"]="*";
 translationTable["キ"]="<";
 translationTable["ク"]="%";
@@ -177,7 +183,7 @@ translationTable["ゴ"]="\"[";
 translationTable["ザ"]="\":";
 translationTable["ジ"]="\"\\";
 translationTable["ズ"]="\"?";
-translationTable["ゼ"]="\"$";
+translationTable["ゼ"]="\"]";
 translationTable["ゾ"]="\"W";
 translationTable["ダ"]="\"O";
 translationTable["ヂ"]="\"R";
@@ -198,7 +204,7 @@ translationTable["ポ"]=",!";
 //4の点をつける(きゃきゅきょ)
 translationTable["キャ"]="@*";
 translationTable["キュ"]="@%";
-translationTable["キョ"]="[";
+translationTable["キョ"]="@[";
 translationTable["シャ"]="@:";
 translationTable["シュ"]="@?";
 translationTable["シェ"]="@$";
@@ -234,11 +240,13 @@ translationTable["ビョ"]="^!";
 translationTable["ウェ"]="5F";
 translationTable["ウォ"]="5I";
 translationTable["ツァ"]="5O";
+translationTable["ツォ"]="5T";
 translationTable["テュ"]="5N";
 translationTable["ファ"]="5U";
 translationTable["フィ"]="5V";
 translationTable["フェ"]="5&";
 translationTable["フォ"]="5!";
+translationTable["デュ"]="4N";
 //256の点をつける(ヴァヴェヴォ)
 translationTable["ヴァ"]="4U";
 translationTable["ヴィ"]="4V";
@@ -247,6 +255,7 @@ translationTable["ヴォ"]="4!";
 //特殊記号
 translationTable["ッ"]="1";
 translationTable["ー"]="3";
+translationTable["-"]="-";
 translationTable["、"]=";";
 translationTable["。"]="4";
 translationTable["!"]="6";
@@ -367,6 +376,7 @@ if(c=="ジ") return true;
 if(c=="シ") return true;
 if(c=="ジ") return true;
 if(c=="ニ") return true;
+if(c=="ヒ") return true;
 if(c=="フ") return true;
 if(c=="ブ") return true;
 if(c=="ピ") return true;

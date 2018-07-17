@@ -14,6 +14,8 @@ BCSTR conjugationType;
 BCSTR conjugationSubType;
 bool num, alpha;
 int alphaType;
+bool require36;
+bool require3456;
 int afterSpaces;
 int afterLinefeeds;
 

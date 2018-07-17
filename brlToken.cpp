@@ -6,6 +6,8 @@ afterSpaces=0;
 afterLinefeeds=0;
 num=false;
 alpha=false;
+require36=false;
+require3456=false;
 }
 
 void brlToken::import(BCSTR in){
@@ -49,6 +51,7 @@ else read="*";
 //読みが「*」と解釈されているものはそのまま出力
 if(read=="*") read=str;
 if(read=="!") type="記号";
+if(read==".") type="記号";
 checkEnglish();
 }
 
