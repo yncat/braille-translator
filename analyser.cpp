@@ -195,7 +195,10 @@ if(pos!=BCSTR_NPOS) current->read.replace(pos,4,"ガツ");
 }
 
 //現在のトークンが数字のときは、いかなる場合にもスペースを空けない
-if(current->subType=="数") current->afterSpaces=0;
+if(current->subType=="数"){
+current->num=true;
+ current->afterSpaces=0;
+}
 
 //ルールを適用したので、dic/after_rules.dicの中身の置き換え規則を適用
 for(boost::unordered::unordered_map<BCSTR,BCSTR>::iterator itr=dic_after_rules.begin();itr!=dic_after_rules.end();++itr){

@@ -36,6 +36,7 @@ if(itr==tokens.end()){
 ended=true;
 break;
 }//if
+if((*itr).num) tmp+=formatter->getBrailleCode("#");
 tmp+=formatter->getBrailleCode((*itr).read);
 if((*itr).afterSpaces>0){
 spc=(*itr).afterSpaces;
@@ -152,7 +153,7 @@ translationTable["ÉK"]="\"*";
 translationTable["ÉM"]="\"<";
 translationTable["ÉO"]="\"%";
 translationTable["ÉQ"]="\"]";
-translationTable["ÉS"]=",[";
+translationTable["ÉS"]="\"[";
 translationTable["ÉU"]="\":";
 translationTable["ÉW"]="\"\\";
 translationTable["ÉY"]="\"?";
@@ -296,7 +297,7 @@ translationTable["x"]="X";
 translationTable["y"]="Y";
 translationTable["z"]="Z";
 //ÇªÇÃëº
-translationTable["/3456"]="#";//êîéöïÑ
+translationTable["#"]="#";//êîéöïÑ
 translationTable["/36"]="-";//åqÇ¨ïÑ
 translationTable["/6"]=",";//ëÂï∂éöïÑ
 }
