@@ -17,8 +17,11 @@ int charsPerLine;
 int linesPerPage;
 } outputSettings;
 
+class brailleFormat_base;
+
 class outputHandler{
 private:
+brailleFormat_base* formatter;
 int format;
 int charsPerLine;
 int linesPerPage;
@@ -30,6 +33,7 @@ outputHandler();
 ~outputHandler();
 int output(vector<brlToken> tokens, BCSTR fname);
 void addLine(BCSTR);
+void addNewPage();
 int setFormat(int);
 int getFormat();
 int setOutputSettings(outputSettings*);

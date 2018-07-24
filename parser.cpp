@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <string.h>
+#include <sstream>
 outputHandler::outputHandler(){
 format=FORMAT_BSE;
 settings.charsPerLine=32;
@@ -13,7 +14,7 @@ outputHandler::~outputHandler(){
 
 int outputHandler::output(vector<brlToken> tokens, BCSTR fname){
 if(fname.empty()) return 0;
-brailleFormat_base* formatter=NULL;
+formatter=NULL;
 switch(format){
 case FORMAT_BSE:
 formatter=new brailleFormat_BSE();
@@ -21,12 +22,13 @@ break;
 }
 if(!formatter) return 0;
 formatter->initialize();
-numPages=1;
+numPages=0;
 numLines=0;
 BCSTR ln, tmp;
 auto itr=tokens.begin();
 int spc, lf;
 bool ended=false;
+addNewPage();
 while(true){
 tmp.clear();
 spc=0;
@@ -99,10 +101,24 @@ BCSTR l=ln+"\x0a";
 parsed_lines.push_back(l);
 numLines++;
 if(numLines==settings.linesPerPage){
- numPages++;
-numLines=0;
+addNewPage();
 }//if
 }//func
+
+void outputHandler::addNewPage(){
+numPages++;
+numLines=1;
+stringstream st;
+st <<"#" << numPages;
+BCSTR pagestr=formatter->getBrailleCode(st.str());
+BCSTR ad;
+for(int i=0;i<settings.charsPerLine-pagestr.size();i++){
+ad+=" ";
+}
+ad+=pagestr;
+ad+="\x0a";
+parsed_lines.push_back(ad);
+}
 
 BCSTR brailleFormat_base::getBrailleCode(BCSTR str){
 BCSTR ret;
